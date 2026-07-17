@@ -1,7 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Neo Anki release status and verified downloads." /><title>Releases — Neo Anki</title><link rel="stylesheet" href="/assets/styles.css" /></head>
-  <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="/"><span aria-hidden="true">N</span>Neo Anki</a><nav aria-label="Primary navigation"><a aria-current="page" href="/releases.html">Releases</a><a href="https://github.com/neoanki/neo-anki">Source</a><a href="/privacy.html">Privacy</a></nav></header>
-    <main id="main" class="document"><p class="eyebrow">Downloads</p><h1>Release status</h1><div class="notice"><strong>No production release yet</strong><p>Neo Anki is undergoing data-safety, extension-isolation, signing, and cross-platform verification work. Do not download installers offered by third parties.</p></div><h2>How releases will work</h2><p>Official builds will be published only through <a href="https://github.com/neoanki/neo-anki/releases">GitHub Releases</a>. Each release will include signed installers, SHA-256 checksums, a software bill of materials, and build-provenance attestations.</p><h2>Supported platforms</h2><ul><li>macOS on Apple silicon and Intel</li><li>Windows x64</li><li>Linux x64 through AppImage</li></ul><p><a class="button secondary" href="https://github.com/neoanki/neo-anki/actions">View continuous integration</a></p></main>
-    <footer><span>© 2026 Neo Anki contributors</span><span><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></span></footer></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Official Neo Anki releases and verification guidance." />
+    <title>Releases — Neo Anki</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Neo Anki home"><span aria-hidden="true">N</span>Neo Anki</a>
+      <nav aria-label="Primary navigation">
+        <a aria-current="page" href="/releases.html">Releases</a>
+        <a href="https://github.com/neoanki/neo-anki">Source</a>
+        <a href="/privacy.html">Privacy</a>
+      </nav>
+    </header>
+    <main id="main" class="document">
+      <p class="eyebrow">Downloads</p>
+      <h1>Neo Anki releases</h1>
+      <div class="notice">
+        <strong>Use the official GitHub Releases page</strong>
+        <p>Install only artifacts published by the <code>neoanki/neo-anki</code> repository. Do not use installers offered by third parties.</p>
+      </div>
+      <p><a class="button primary" href="https://github.com/neoanki/neo-anki/releases">View releases</a></p>
+      <h2>Supported platforms</h2>
+      <ul>
+        <li>macOS on Apple silicon and Intel</li>
+        <li>Windows x64</li>
+        <li>Linux x64 through AppImage</li>
+      </ul>
+      <h2>Installation and verification</h2>
+      <p>macOS and Windows packages are intentionally unsigned, so the operating system will display a security warning. Follow the installation guide included with each release and update the app manually.</p>
+      <p>Every release includes SHA-256 checksums, a CycloneDX software bill of materials, and GitHub build-provenance attestations. Verify an artifact with <code>gh attestation verify &lt;artifact&gt; --repo neoanki/neo-anki</code>.</p>
+      <p><a class="button secondary" href="https://github.com/neoanki/neo-anki/actions">View build status</a></p>
+    </main>
+    <footer>
+      <span>© 2026 Neo Anki contributors</span>
+      <span><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></span>
+    </footer>
+  </body>
 </html>
