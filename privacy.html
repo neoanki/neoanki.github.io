@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Neo Anki privacy policy." />
+    <meta name="description" content="How the Neo Anki website, desktop app, optional sync, and extensions handle data." />
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1f1c" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://neoanki.github.io/privacy.html" />
     <title>Privacy — Neo Anki</title>
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
@@ -12,29 +15,41 @@
     <header class="site-header">
       <a class="brand" href="/" aria-label="Neo Anki home"><span aria-hidden="true">N</span>Neo Anki</a>
       <nav aria-label="Primary navigation">
-        <a href="/releases.html">Releases</a>
-        <a href="https://github.com/neoanki/neo-anki">Source</a>
-        <a aria-current="page" href="/privacy.html">Privacy</a>
+        <a href="/releases.html">Download</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/extensions.html">Extensions</a>
+        <a href="https://github.com/neoanki/neo-anki">GitHub</a>
       </nav>
     </header>
+
     <main id="main" class="document">
-      <p class="eyebrow">Last updated July 17, 2026</p>
+      <p class="eyebrow">Last updated July 19, 2026</p>
       <h1>Privacy</h1>
-      <p>Neo Anki is designed as a local-first desktop application. The application does not require an account and does not send your cards, answers, review history, media, or usage analytics to Neo Anki.</p>
-      <h2>Data on your device</h2>
-      <p>Your workspace and backups are stored on your device in locations shown by the application. You control exports and deletion. Your operating-system account and disk protections determine who else can access these files.</p>
-      <h2>Network access</h2>
-      <p>The application does not require network access for studying and does not check for or install application updates automatically. Links you explicitly open, including the releases page, use your default browser.</p>
+      <p class="page-lede">Neo Anki is device-first and the core desktop study flow does not require an account. Network behavior depends on the optional services and extensions you choose.</p>
+
+      <h2>Workspace data</h2>
+      <p>The desktop app stores its workspace, media, and automatic recovery backups on your device. Export, restore, and reset actions remain under your control. Your operating-system account, disk encryption, backups, and device security determine who else can read those local files.</p>
+
+      <h2>Analytics and telemetry</h2>
+      <p>The Neo Anki application does not include product analytics or advertising telemetry. Diagnostic exports are created only when you request one; review them before sharing because they can contain technical details about your environment.</p>
+
+      <h2>Network features</h2>
+      <p>Studying local material does not require a network connection. The application can make network requests when you explicitly configure encrypted sync, browse the extension catalog, install an approved extension, or open an external link. Application updates are not downloaded or installed automatically.</p>
+      <p>Encrypted sync sends ciphertext and protocol metadata to the configured sync service. Encryption is designed to keep workspace content from the relay, but an operator can still observe information such as account, timing, request-size, and network metadata. The browser client also shares its unlocked key-use boundary with same-origin code. See the <a href="https://github.com/neoanki/neo-anki/blob/main/docs/browser-sync-security.md">browser sync security boundary</a> and the chosen service operator’s policy.</p>
+
       <h2>Extensions</h2>
-      <p>Installed extensions run as trusted code and can receive data through their declared capabilities. Capability declarations communicate intended access; they are not a security sandbox. Review every package and install extensions only from publishers you trust.</p>
-      <h2>Website</h2>
-      <p>This website is hosted by GitHub Pages. GitHub may process connection information according to its own privacy statement. Neo Anki does not add analytics, advertising, cookies, or tracking scripts.</p>
-      <h2>Changes</h2>
-      <p>Material policy changes will be documented with application release notes. Questions can be raised through the public project repository without including private learning data.</p>
+      <p>Built-in modules are trusted application code. Installable SDK 2 extensions run in isolated workers and sandboxed frames, and access host features through declared capabilities. An extension granted <code>network:fetch</code> can contact its reviewed HTTPS domains, and other capabilities can expose scoped study or content data. Review every publisher, domain, and capability before installing. A marketplace listing or valid signature does not guarantee safety.</p>
+
+      <h2>This website</h2>
+      <p>This static website is hosted by GitHub Pages. It adds no analytics, advertising, cookies, form submissions, client-side application code, or third-party assets. GitHub processes connection information under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
+
+      <h2>Questions and changes</h2>
+      <p>Material changes should be recorded in this page’s source history and, when relevant, application release notes. Ask public questions in the <a href="https://github.com/neoanki/neo-anki/issues">project issue tracker</a> without including private learning data. Report security-sensitive matters through the <a href="/security.html">private security channel</a>.</p>
     </main>
+
     <footer>
       <span>© 2026 Neo Anki contributors</span>
-      <span><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></span>
+      <span><a aria-current="page" href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/neoanki/neo-anki/blob/main/LICENSE">MIT License</a></span>
     </footer>
   </body>
 </html>

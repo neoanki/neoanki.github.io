@@ -23,12 +23,52 @@ jobs:
       - name: Validate required pages and local links
         shell: bash
         run: |
-          test -f index.html
-          test -f releases.html
-          test -f privacy.html
-          test -f security.html
           test -f assets/styles.css
+          test -f sitemap.xml
+          for page in index.html releases.html docs.html extensions.html privacy.html security.html 404.html; do
+            test -f "$page"
+          done
           ! grep -R 'TODO\|PLACEHOLDER' --include='*.html' --include='*.css' .
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.hrefs = []
+                  self.ids = set()
+
+              def handle_starttag(self, tag, attrs):
+                  values = dict(attrs)
+                  if values.get("id"):
+                      self.ids.add(values["id"])
+                  if tag == "a" and values.get("href"):
+                      self.hrefs.append(values["href"])
+
+          root = Path(".")
+          parsed = {}
+          for page in root.glob("*.html"):
+              links = Links()
+              links.feed(page.read_text())
+              parsed[page.name] = links
+
+          failures = []
+          for source, links in parsed.items():
+              for href in links.hrefs:
+                  if href.startswith(("https://", "http://", "mailto:")):
+                      continue
+                  path, _, fragment = href.partition("#")
+                  target = "index.html" if path in ("", "/") else path.lstrip("/")
+                  target_path = root / target
+                  if not target_path.is_file():
+                      failures.append(f"{source}: missing {href}")
+                  elif fragment and target.endswith(".html") and fragment not in parsed[target].ids:
+                      failures.append(f"{source}: missing fragment {href}")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          PY
 
   deploy:
     if: github.event_name != 'pull_request'

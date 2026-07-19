@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Neo Anki user, compatibility, architecture, extension, sync, and contributor documentation." />
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1f1c" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://neoanki.github.io/docs.html" />
+    <title>Documentation — Neo Anki</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Neo Anki home"><span aria-hidden="true">N</span>Neo Anki</a>
+      <nav aria-label="Primary navigation">
+        <a href="/releases.html">Download</a>
+        <a aria-current="page" href="/docs.html">Docs</a>
+        <a href="/extensions.html">Extensions</a>
+        <a href="https://github.com/neoanki/neo-anki">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="main" class="document wide-document">
+      <p class="eyebrow">Documentation</p>
+      <h1>Understand the product before trusting it.</h1>
+      <p class="page-lede">Neo Anki keeps its detailed documentation beside the source so behavior, limits, and implementation can change together. Links below point to the current <code>main</code> branch and may be newer than the latest published binary.</p>
+
+      <section id="project-status" class="status-panel" aria-labelledby="status-heading">
+        <div><span class="status-label"><i aria-hidden="true"></i>Pre-1.0</span><h2 id="status-heading">Project status</h2></div>
+        <div>
+          <p>Neo Anki is an actively developed desktop preview. The project does not currently make a drop-in Anki replacement claim, a production-readiness claim, or a comparative learning-effectiveness claim.</p>
+          <p>Desktop releases are public. Browser and mobile implementations are present in the repository, but hosted-service and physical-device release gates remain. Check the exact release notes before relying on a feature.</p>
+        </div>
+      </section>
+
+      <h2>Start here</h2>
+      <div class="doc-grid">
+        <a href="https://github.com/neoanki/neo-anki#readme"><strong>Project README</strong><span>Current feature surface, development setup, and planning model.</span></a>
+        <a href="/releases.html"><strong>Download and verification</strong><span>Published platforms, checksums, attestations, and current signing status.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/anki-compatibility.md"><strong>Anki compatibility</strong><span>Supported imports, transformations, known limits, and exit guidance.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/SECURITY.md"><strong>Security policy</strong><span>Supported versions, report channel, and in-scope components.</span></a>
+      </div>
+
+      <h2>Architecture and data</h2>
+      <div class="doc-grid">
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/claim-evidence.md"><strong>Claim evidence register</strong><span>Allowed public wording, current known limits, and gates for stronger claims.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/desktop-architecture.md"><strong>Desktop architecture</strong><span>Electron process boundaries, persistence, and packaged content.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/core-and-extensions.md"><strong>Core and extensions</strong><span>Trusted built-in modules compared with installable SDK 2 packages.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/browser-sync-security.md"><strong>Browser sync boundary</strong><span>What client-side encryption protects—and what same-origin code can still access.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/sync-service.md"><strong>Sync service operations</strong><span>Self-hosting, limits, monitoring, deletion, and data portability.</span></a>
+      </div>
+
+      <h2>Build and extend</h2>
+      <div class="doc-grid">
+        <a href="https://github.com/neoanki/neo-anki/blob/main/CONTRIBUTING.md"><strong>Contributing</strong><span>Development setup and pull-request expectations.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/extension-authoring.md"><strong>Extension authoring</strong><span>Create, sign, test, and submit an SDK 2 package.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/extension-sdk.md"><strong>Extension SDK 2</strong><span>Manifest, permissions, worker and UI contracts, and resource limits.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/releasing.md"><strong>Release process</strong><span>Signing gates, checksums, SBOMs, provenance, and rollback.</span></a>
+      </div>
+
+      <p class="callout"><strong>Found a documentation mismatch?</strong> Open a focused issue or pull request in the <a href="https://github.com/neoanki/neo-anki/issues">project repository</a>. Do not include private learning data or unredacted diagnostics.</p>
+    </main>
+
+    <footer>
+      <span>© 2026 Neo Anki contributors</span>
+      <span><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/neoanki/neo-anki/blob/main/LICENSE">MIT License</a></span>
+    </footer>
+  </body>
+</html>
