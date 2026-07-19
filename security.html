@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="How to report a Neo Anki security issue." />
+    <meta name="description" content="How to report a Neo Anki vulnerability and verify official release artifacts." />
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1f1c" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://neoanki.github.io/security.html" />
     <title>Security — Neo Anki</title>
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
@@ -12,28 +15,45 @@
     <header class="site-header">
       <a class="brand" href="/" aria-label="Neo Anki home"><span aria-hidden="true">N</span>Neo Anki</a>
       <nav aria-label="Primary navigation">
-        <a href="/releases.html">Releases</a>
-        <a href="https://github.com/neoanki/neo-anki">Source</a>
-        <a href="/privacy.html">Privacy</a>
+        <a href="/releases.html">Download</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/extensions.html">Extensions</a>
+        <a href="https://github.com/neoanki/neo-anki">GitHub</a>
       </nav>
     </header>
+
     <main id="main" class="document">
       <p class="eyebrow">Coordinated disclosure</p>
       <h1>Security</h1>
-      <p>Please report suspected vulnerabilities through <a href="https://github.com/neoanki/neo-anki/security/advisories/new">GitHub private vulnerability reporting</a>. Do not include exploits, user data, or unredacted diagnostics in a public issue.</p>
+      <p class="page-lede">Report suspected vulnerabilities privately. Do not publish an exploit, private learning data, credentials, or unredacted diagnostics in a GitHub issue.</p>
+
+      <div class="notice action-notice">
+        <div><strong>Use GitHub private vulnerability reporting</strong><p>Include affected versions, reproduction steps, expected impact, and any suggested mitigation.</p></div>
+        <a class="button primary" href="https://github.com/neoanki/neo-anki/security/advisories/new">Start a private report</a>
+      </div>
+
+      <h2>Supported versions</h2>
+      <p>Neo Anki is pre-1.0. Security fixes are applied to the latest published release and the <code>main</code> branch; older releases may not receive fixes. See the repository’s <a href="https://github.com/neoanki/neo-anki/blob/main/SECURITY.md">normative security policy</a> for current scope.</p>
+
       <h2>In scope</h2>
       <ul>
-        <li>Desktop main process and preload bridge</li>
-        <li>Persistence, backups, migrations, and importers</li>
-        <li>Release distribution, checksums, SBOMs, and provenance attestations</li>
-        <li>Extension packaging, loading, recovery, and SDK capabilities</li>
+        <li>Electron main process, preload bridge, and renderer boundary</li>
+        <li>Workspace persistence, backups, migrations, importers, and retained source packages</li>
+        <li>Sync protocol, clients, service, credentials, and encryption boundaries</li>
+        <li>Release distribution, checksums, SBOMs, signatures, and provenance attestations</li>
+        <li>Extension package validation, marketplace client, runtime isolation, lifecycle, and SDK capabilities</li>
       </ul>
-      <h2>Expected response</h2>
-      <p>We aim to acknowledge reports within three business days and provide an initial assessment within seven days. Disclosure will be coordinated after affected users can obtain a fix.</p>
+
+      <h2>Release trust</h2>
+      <p>Install only artifacts published by <code>neoanki/neo-anki</code>. Verify both the release checksum and GitHub build-provenance attestation. The current v0.1.5 macOS and Windows packages are unsigned; future release automation requires platform signing, but users should still verify provenance. See <a href="/releases.html">download and verification guidance</a>.</p>
+
+      <h2>Public bugs</h2>
+      <p>Non-sensitive defects can be reported in the <a href="https://github.com/neoanki/neo-anki/issues">public issue tracker</a>. Remove learning content, local paths, account details, tokens, and other private information from screenshots and logs.</p>
     </main>
+
     <footer>
       <span>© 2026 Neo Anki contributors</span>
-      <span><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a></span>
+      <span><a href="/privacy.html">Privacy</a><a aria-current="page" href="/security.html">Security</a><a href="https://github.com/neoanki/neo-anki/blob/main/LICENSE">MIT License</a></span>
     </footer>
   </body>
 </html>

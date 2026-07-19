@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Neo Anki extension marketplace status, review process, installation boundary, and publisher resources." />
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1b1f1c" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://neoanki.github.io/extensions.html" />
+    <title>Extensions — Neo Anki</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Neo Anki home"><span aria-hidden="true">N</span>Neo Anki</a>
+      <nav aria-label="Primary navigation">
+        <a href="/releases.html">Download</a>
+        <a href="/docs.html">Docs</a>
+        <a aria-current="page" href="/extensions.html">Extensions</a>
+        <a href="https://github.com/neoanki/neo-anki">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="main" class="document wide-document">
+      <p class="eyebrow">Extension marketplace</p>
+      <h1>Reviewed discovery, with no safety shortcut.</h1>
+      <p class="page-lede">Neo Anki’s public catalog is designed to make extension submissions auditable and package downloads reproducible. A listing is not a warranty, identity attestation, or claim of learning effectiveness.</p>
+
+      <div class="marketplace-status">
+        <div><span class="status-label neutral"><i aria-hidden="true"></i>1 reviewed extension</span><strong>NeoAnki TTS is the first marketplace listing</strong><p>The catalog points to its immutable, production-signed v2.0.1 release. Development examples signed with test keys remain separate from marketplace listings.</p></div>
+        <a class="button primary" href="https://github.com/neoanki/extensions">View the public catalog</a>
+      </div>
+      <p class="checked-note">Catalog status checked July 19, 2026. The application reads the live catalog, so its contents may change before this page does.</p>
+
+      <h2>Available extensions</h2>
+      <div class="release-summary">
+        <div>
+          <span>Reviewed · SDK 2 · v2.0.1</span>
+          <strong>NeoAnki TTS</strong>
+          <small>Generate, cache, and play text-to-speech audio with configurable profiles, batch processing, and review playback.</small>
+        </div>
+        <a class="button secondary" href="https://github.com/neoanki/neoanki-tts">Details and source</a>
+      </div>
+      <p>NeoAnki TTS supports OpenAI, ElevenLabs, Google Cloud Text-to-Speech, and Azure Speech. Text is sent directly to the provider you configure; credentials stay in operating-system secure storage and are not synchronized. Provider accounts and usage charges may apply. See the <a href="https://github.com/neoanki/neoanki-tts/releases/tag/v2.0.1">signed release, checksum, SBOM, and build provenance</a>.</p>
+
+      <h2>What catalog review checks</h2>
+      <div class="feature-grid compact-grid">
+        <article><span>01</span><h3>Submission</h3><p>A publisher proposes one catalog entry through a pull request in the public marketplace repository.</p></article>
+        <article><span>02</span><h3>Automated validation</h3><p>Checks cover schema, package URL, size, SHA-256, signed manifest metadata, SDK version, permissions, repository identity, and signing-key continuity.</p></article>
+        <article><span>03</span><h3>Maintainer review</h3><p>Review covers publisher control, source and build provenance, permissions, privacy and network behavior, licensing, UX, and pedagogical claims.</p></article>
+        <article><span>04</span><h3>User confirmation</h3><p>Desktop revalidates the approved release, then shows the package’s requested capabilities before the user confirms installation.</p></article>
+      </div>
+
+      <h2>Runtime and trust boundary</h2>
+      <div class="comparison">
+        <article><span>Built-in modules</span><h3>Trusted application code</h3><p>Features compiled with Neo Anki run inside the application’s trust boundary. Their module interfaces are architectural boundaries, not third-party sandboxes.</p></article>
+        <article><span>Installable SDK 2 packages</span><h3>Signed and capability-scoped</h3><p>Extension logic runs in a worker, extension UI runs in a sandboxed iframe, and core validates capability calls and proposed workspace patches.</p></article>
+      </div>
+      <p class="callout warning"><strong>Important:</strong> a signature proves that a package matches its signed bytes; it does not prove the publisher’s real-world identity or that the code is safe. Isolation reduces access but does not remove all risk. Review the publisher, source, network domains, and requested capabilities.</p>
+
+      <h2>Availability</h2>
+      <ul>
+        <li>The current main branch contains marketplace discovery for desktop, browser, and mobile clients.</li>
+        <li>Only the desktop client has an installable extension runtime; browser and mobile discovery is browse-only.</li>
+        <li>The published v0.1.5 desktop binary predates the marketplace integration. Check release notes before expecting it in a download.</li>
+        <li>Extension updates are reviewed and installed explicitly; there is no silent automatic update path.</li>
+      </ul>
+
+      <h2>For publishers</h2>
+      <div class="doc-grid">
+        <a href="https://github.com/neoanki/extensions/blob/main/CONTRIBUTING.md"><strong>Submission policy</strong><span>Normative catalog requirements and review criteria.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/extension-authoring.md"><strong>Authoring guide</strong><span>Create, sign, test, and package an SDK 2 extension.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/blob/main/docs/extension-sdk.md"><strong>SDK reference</strong><span>Permissions, host calls, limits, and failure behavior.</span></a>
+        <a href="https://github.com/neoanki/neo-anki/tree/main/examples/study-pulse-extension"><strong>Study Pulse example</strong><span>A development example using a deliberately non-production test key.</span></a>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 Neo Anki contributors</span>
+      <span><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="https://github.com/neoanki/neo-anki/blob/main/LICENSE">MIT License</a></span>
+    </footer>
+  </body>
+</html>
