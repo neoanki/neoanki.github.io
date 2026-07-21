@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Neo Anki extension marketplace status, review process, installation boundary, and publisher resources." />
+    <meta name="description" content="Browse Neo Anki extensions for card types, image occlusion, imports, review planning, learning packs, insights, timers, and speech." />
     <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1b1f1c" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://neoanki.github.io/extensions.html" />
@@ -28,21 +28,21 @@
       <p class="page-lede">Neo Anki’s public catalog is designed to make extension submissions auditable and package downloads reproducible. A listing is not a warranty, identity attestation, or claim of learning effectiveness.</p>
 
       <div class="marketplace-status">
-        <div><span class="status-label neutral"><i aria-hidden="true"></i>1 reviewed extension</span><strong>NeoAnki TTS is the first marketplace listing</strong><p>The catalog points to its immutable, production-signed v2.0.2 release. Development examples signed with test keys remain separate from marketplace listings.</p></div>
+        <div><span class="status-label neutral"><i aria-hidden="true"></i>9 reviewed extensions</span><strong>Choose features that fit the way you study</strong><p>Every listing points to an independently released, signed package with public source code and a reproducible checksum.</p></div>
         <a class="button primary" href="https://github.com/neoanki/extensions">View the public catalog</a>
       </div>
-      <p class="checked-note">Catalog status checked July 20, 2026. The application reads the live catalog, so its contents may change before this page does.</p>
+      <p class="checked-note">Catalog status checked July 21, 2026. The application reads the live catalog, so its contents may change before this page does.</p>
 
       <h2>Available extensions</h2>
-      <div class="release-summary">
-        <div>
-          <span>Reviewed · SDK 2 · v2.0.2</span>
-          <strong>NeoAnki TTS</strong>
-          <small>Generate, cache, and play text-to-speech audio with configurable profiles, batch processing, and review playback.</small>
-        </div>
-        <a class="button secondary" href="https://github.com/neoanki/neoanki-tts">Details and source</a>
-      </div>
-      <p>NeoAnki TTS supports OpenAI, ElevenLabs, Google Cloud Text-to-Speech, and Azure Speech. Text is sent directly to the provider you configure; credentials stay in operating-system secure storage and are not synchronized. Provider accounts and usage charges may apply. See the <a href="https://github.com/neoanki/neoanki-tts/releases/tag/v2.0.2">signed release, checksum, SBOM, and build provenance</a>.</p>
+      <div class="release-summary"><div><span>Study pacing</span><strong>Card Timer</strong><small>Show a countdown target beside each review card without automatic grading.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-card-timer">Details and source</a></div>
+      <div class="release-summary"><div><span>Collection overview</span><strong>Collection Insights</strong><small>See due cards, deck sizes, common tags, and notes that need attention.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-insights">Details and source</a></div>
+      <div class="release-summary"><div><span>Study audio</span><strong>Text to Speech</strong><small>Add spoken prompts and answers with device voices or configurable cloud providers.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-tts">Details and source</a></div>
+      <div class="release-summary"><div><span>Card creation</span><strong>More Card Types</strong><small>Create reverse, fill-in-the-blank, typed-answer, and audio-first cards.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-prompt-types">Details and source</a></div>
+      <div class="release-summary"><div><span>Visual learning</span><strong>Image Occlusion</strong><small>Turn an image into one recall card for every region you hide.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-image-occlusion">Details and source</a></div>
+      <div class="release-summary"><div><span>Move your collection</span><strong>Anki &amp; CSV Import/Export</strong><small>Preview, import, and export Anki packages and CSV files with rollback protection.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-interoperability">Details and source</a></div>
+      <div class="release-summary"><div><span>Review planning</span><strong>Review Priorities</strong><small>Order overdue cards by oldest first or start with quick wins.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-recovery-policies">Details and source</a></div>
+      <div class="release-summary"><div><span>Learning plans</span><strong>Goals &amp; Saved Searches</strong><small>Set learning goals and save Library searches for quick reuse.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-workspace">Details and source</a></div>
+      <div class="release-summary"><div><span>Reusable content</span><strong>Learning Packs</strong><small>Install and update learning packs without losing local edits or review progress.</small></div><a class="button secondary" href="https://github.com/neoanki/neoanki-shared-packs">Details and source</a></div>
 
       <h2>What catalog review checks</h2>
       <div class="feature-grid compact-grid">
@@ -54,8 +54,8 @@
 
       <h2>Runtime and trust boundary</h2>
       <div class="comparison">
-        <article><span>Built-in modules</span><h3>Trusted application code</h3><p>Features compiled with Neo Anki run inside the application’s trust boundary. Their module interfaces are architectural boundaries, not third-party sandboxes.</p></article>
-        <article><span>Installable SDK 2 packages</span><h3>Signed and capability-scoped</h3><p>Extension logic runs in a worker, extension UI runs in a sandboxed iframe, and core validates capability calls and proposed workspace patches.</p></article>
+        <article><span>Neo Anki application</span><h3>Stable study foundation</h3><p>Neo Anki provides storage, scheduling, review, validation, and the controls that extensions use.</p></article>
+        <article><span>Installable extensions</span><h3>Independent and permission-based</h3><p>Each extension has its own repository and release. Neo Anki shows its requested permissions before installation and limits it to those permissions while running.</p></article>
       </div>
       <p class="callout warning"><strong>Important:</strong> a signature proves that a package matches its signed bytes; it does not prove the publisher’s real-world identity or that the code is safe. Isolation reduces access but does not remove all risk. Review the publisher, source, network domains, and requested capabilities.</p>
 
@@ -63,7 +63,7 @@
       <ul>
         <li>The current main branch contains marketplace discovery for desktop, browser, and mobile clients.</li>
         <li>Only the desktop client has an installable extension runtime; browser and mobile discovery is browse-only.</li>
-        <li>The v0.2.2 desktop release includes marketplace discovery and the installable extension runtime. In Settings → Extensions, select <strong>Review &amp; install</strong>, confirm the requested capabilities, and reload when prompted.</li>
+        <li>Neo Anki v0.3.0 and later include marketplace discovery and extension installation. In Settings → Extensions, select <strong>Review &amp; install</strong>, confirm the requested permissions, and reload when prompted.</li>
         <li>Extension updates are reviewed and installed explicitly; there is no silent automatic update path.</li>
       </ul>
 
